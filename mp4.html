@@ -1,0 +1,42 @@
+<style type="text/css">*{margin:0;padding:0}#player{position:absolute;width:100%!important;height:100%!important}</style>
+<script src="//content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
+ 
+<div id="player"></div>
+<script type="text/javascript">
+var player = jwplayer('player');
+
+player.setup({
+   playlist: [{
+        file: "http://www.dhakamovie.com/Data/data1/english-movies1/1998//Saving%20Private%20Ryan%20(1998)/Saving%20Private%20Ryan%20(1998)%201080p%20BrRip%20x264.mp4",
+        type: "video/mp4",
+        image: "https://4.bp.blogspot.com/-qF0NbmxaeJw/XABPmFjhIpI/AAAAAAAAAPY/z2ykQa5Q8x4CRYQsKkiCfg3JA7Fydt0lQCLcBGAs/s1600/play.gif",
+         tracks: [{ 
+            file: "//gdriveplayer.us?subtitle=https://subscene.com/subtitles/saving-private-ryan/bengali/1163905", 
+            label: "Bangla",
+            kind: "captions",
+            "default": true 
+        },]
+ }],
+    captions: {
+        color: '#fc6',
+        fontSize: 18,
+        backgroundOpacity: 00
+    }   
+  
+});
+
+player.addButton(
+  //This portion is what designates the graphic used for the button
+  "//icons.jwplayer.com/icons/white/download.svg",
+  //This portion determines the text that appears as a tooltip
+  "Download Video",
+  //This portion designates the functionality of the button itself
+  function() {
+    //With the below code, we're grabbing the file that's currently playing
+    window.location.href = player.getPlaylistItem()['file'];
+  },
+  //And finally, here we set the unique ID of the button itself.
+  "download"
+);
+
+</script>
